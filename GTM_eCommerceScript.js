@@ -1,8 +1,8 @@
 <!-- Google Tag Manager E-commerce -->
 <!-- Version: 1.1 -->
 <script>
-		//Build datalayer
-			dataLayer = [];
+        //Check if dataLayer exists or build dataLayer
+			dataLayer = (typeof dataLayer !== 'undefined') ? dataLayer : [];
 		// Build product array
 	    	gtm_products = [];
     	
