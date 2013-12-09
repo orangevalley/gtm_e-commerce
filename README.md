@@ -87,7 +87,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-XXXX');</script>
 <!-- End Google Tag Manager -->
 ```
-otherwise **replace both instances of GTM-XXXX within this part of the code** with your container ID (supplied separately by OrangeValley). Paste the code into your website Thank You-page. The script is designed to work everywhere between the opening < body > and closing </ body > tags. Feel free to place it above or below the Google Tag Manager Container, both will work.
+otherwise **replace both instances of GTM-XXXXXX within this part of the code** with your container ID (supplied separately by OrangeValley). Paste the code into your website Thank You-page. The script is designed to work everywhere between the opening < body > and closing </ body > tags. Feel free to place it above or below the Google Tag Manager Container, both will work.
 
 ### Implementing the proper values
 Within the Google Tag Manager E-Commerce code you will find different Data Layer values which need to be populated with relevant transactional data. Although not all fields are required, it's important to get in touch with your OrangeValley point of contact if you can not populate some part with proper data. All values should be populated based on the [transaction data values](link) or the client specific list if so provided by OrangeValley.
