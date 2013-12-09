@@ -104,7 +104,7 @@ If you run in to any problems; for instance the Tag Assistant is reporting issue
 
 - Refer to the [Google Tag Manager Data Layer developer resource](https://developers.google.com/tag-manager/devguide#datalayer)
 - [Google Tag Manager Troubleshooting information](https://developers.google.com/tag-manager/troubleshooting)
-- Get in touch with your OrangeValley Point of contact or send a message to support _at_ orangevalley _dot_ nl.
+- Get in touch with your (OrangeValley)[http://orangevalley.nl/] Point of contact or send a message to support _at_ orangevalley _dot_ nl.
 
 ## Additional information
 [Google Tag Manager support website](https://developers.google.com/tag-manager/quickstart)
