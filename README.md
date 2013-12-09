@@ -19,12 +19,12 @@ The basic Google Tag E-Commerce code (using the Data Layer) looks like:
                 // Build product array
                     gtm_products = [];
             
-                    gtm_products.push({
-                        'name': 'Test Product',                        // Productname / title **Required**
-                        'sku': 'SKU0001',                        // Unique product SKU (Article ID) **Required**
-                        'category': 'Test categorie',                // Product category - for instance Men | Jackets
-                        'price': 9.99,                                // Prijs per product incl. BTW - Let op bij bedragen . (punt) gebruiken - Vereist
-                        'quantity': 1                                // Aantal - Vereist
+                  gtm_products.push({
+                    'name': 'Test Product1',
+                    'sku': 'SKU0001',
+                    'category': 'Test categorie',
+                    'price': 6.95,
+                    'quantity': 2
                     });
                 // Optional repeat for each additional product to fill gtm_products array
 
@@ -32,7 +32,7 @@ The basic Google Tag E-Commerce code (using the Data Layer) looks like:
                     'name': 'Test Product2',
                     'sku': 'SKU0002',
                     'category': 'Test categorie',
-                    'price': 5.99,
+                    'price': 5.95,
                     'quantity': 2
                     });
             // Optional repeat for each additional product to fill gtm_products array
@@ -42,14 +42,14 @@ The basic Google Tag E-Commerce code (using the Data Layer) looks like:
             // Additional datalayer items are send to the datalayer and processed by the GTM as an transaction
             dataLayer.push({
                         'event': 'trackTrans',
-                        'transactionId': '000111',                        // Transaction ID **Required**
-                        'transactionAffiliation': '',                        // Optional: Affiliaton / Shop name
-                        'transactionTotal': '110.00',                        // Total order value including VAT  - currency values should always use a dot "." **Required**
-                        'transactionTax': '10.00',                        // VAT  - currency values should always use a dot "."
-                        'transactionShipping': '3.95',                        // Shipping cost - currency values should always use a dot "."
-                        'transactionPaymentType': 'iDEAL',                // Payment type - iDEAL, Creditcard
-                        'transactionCurrency': 'EUR',                        // Currency
-                        'transactionPromoCode': '',                        // optional: Promotion code
+                        'transactionId': '000111',
+                        'transactionAffiliation': 'Webshop',        
+												'transactionTotal': '12.90',
+                        'transactionTax':'10.00',
+                        'transactionShipping': '3.95',
+                        'transactionPaymentType': 'iDEAL',
+                        'transactionCurrency': 'EUR',
+                        'transactionPromoCode': 'Coupon_summer_deal',
                         'transactionProducts': gtm_products                                        
                         });        
   </script>
@@ -90,7 +90,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 otherwise **replace both instances of GTM-XXXXXX within this part of the code** with your container ID (supplied separately by OrangeValley). Paste the code into your website Thank You-page. The script is designed to work everywhere between the opening < body > and closing </ body > tags. Feel free to place it above or below the Google Tag Manager Container, both will work.
 
 ### Implementing the proper values
-Within the Google Tag Manager E-Commerce code you will find different Data Layer values which need to be populated with relevant transactional data. Although not all fields are required, it's important to get in touch with your OrangeValley point of contact if you can not populate some part with proper data. All values should be populated based on the [transaction data values](link) or the client specific list if so provided by OrangeValley.
+Within the Google Tag Manager E-Commerce code you will find different Data Layer values which need to be populated with relevant transactional data. Although not all fields are required, it's important to get in touch with your OrangeValley point of contact if you can not populate some part with proper data. All values should be populated based on the [transaction data values](https://github.com/orangevalley/GTM_e-commerce/wiki/Google-Tag-Manager-E-Commerce-code-Transaction-Values) or the client specific list if so provided by OrangeValley.
 
 _**Note:** The Google Tag Manager E-Commerce code must be placed directly in the page that you intend on tracking values. Placing it in a hidden iframe or deploying it within another tag management system will prevent certain tags from accurately tracking the parent page._
 
