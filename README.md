@@ -109,3 +109,7 @@ If you run in to any problems; for instance the Tag Assistant is reporting issue
 ## Additional information
 [Google Tag Manager support website](https://developers.google.com/tag-manager/quickstart)
 
+# Version History
+- 1.1 (November 22 - 2013): Check if Data Layer exists and only build a (new) Data Layer if necessary
+
+- 1 (October 1 - 2012): Initial release of standardised Google Tag Manager E-Commerce code
