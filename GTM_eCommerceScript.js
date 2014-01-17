@@ -1,5 +1,5 @@
 <!-- Google Tag Manager E-commerce -->
-<!-- Version: 1.1 -->
+<!-- Version: 1.2 -->
 <script>
         //Check if dataLayer exists or build dataLayer
 			dataLayer = (typeof dataLayer !== 'undefined') ? dataLayer : [];
@@ -31,9 +31,9 @@
 			'event': 'trackTrans',
 			'transactionId': '000111',			// Transactie ID - Vereist
 			'transactionAffiliation': '',			// Affiliate / shopbenaming -> Leeg laten
-			'transactionTotal': '110.00',			// Totaal orderwaarde incl. BTW - Let op bij bedragen . (punt) gebruiken - Vereist
-			'transactionTax': '10.00',			// BTW - Let op bij bedragen . (punt) gebruiken
-			'transactionShipping': '3.95',			// Verzendkosten - Let op bij bedragen . (punt) gebruiken
+			'transactionTotal': 110.00,			// Totaal orderwaarde incl. BTW - Let op bij bedragen . (punt) gebruiken - Vereist
+			'transactionTax': 10.00,			// BTW - Let op bij bedragen . (punt) gebruiken
+			'transactionShipping': 3.95,			// Verzendkosten - Let op bij bedragen . (punt) gebruiken
 			'transactionPaymentType': 'iDEAL',		// Betaalwijze - iDEAL of Creditcard
 			'transactionCurrency': 'EUR',			// Munteenheid
 			'transactionPromoCode': '',			// Promotiecode
