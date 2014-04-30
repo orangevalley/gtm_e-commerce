@@ -12,46 +12,48 @@ The basic Google Tag E-Commerce code (using the Data Layer) looks like:
 
 ```javascript
 <!-- Google Tag Manager E-commerce -->
-<!-- Version: 1.1 -->
+<!-- Version: 1.2.1 -->
 <script>
         //Check if dataLayer exists or build dataLayer
-                        dataLayer = (typeof dataLayer !== 'undefined') ? dataLayer : [];
-                // Build product array
-                    gtm_products = [];
-            
-                  gtm_products.push({
-                    'name': 'Test Product1',
-                    'sku': 'SKU0001',
-                    'category': 'Test categorie',
-                    'price': 6.95,
-                    'quantity': 2
-                    });
-                // Optional repeat for each additional product to fill gtm_products array
+			dataLayer = (typeof dataLayer !== 'undefined') ? dataLayer : [];
+		// Build product array
+	    	gtm_products = [];
+    	
+    		gtm_products.push({
+			'name': 'Test Product',			// Productname/title (Short description) - Required - for example. Brown T-shirt
+			'sku': 'SKU0001',			// Unique product code/SKU - Vereist -  for example AI1317001 | CC AJORDSTR (Artikle code + additional style coding) 
+			'category': 'Test categorie',		// Product category
+			'price': 9.99,				// Product price (for one product) including VAT - As decimal seperator a . (dot) should be used - Required
+			'quantity': 1				// Number of items for this specific product - Required
+    		});
+		// Optional repeat for each additional product to fill gtm_products array
 
-                gtm_products.push({
-                    'name': 'Test Product2',
-                    'sku': 'SKU0002',
-                    'category': 'Test categorie',
-                    'price': 5.95,
-                    'quantity': 2
-                    });
-            // Optional repeat for each additional product to fill gtm_products array
+		gtm_products.push({
+    		'name': 'Test Product2',
+    		'sku': 'SKU0002',
+    		'category': 'Test categorie',
+    		'price': 5.99,
+    		'quantity': 2
+    		});
+    	// Optional repeat for each additional product to fill gtm_products array
 
-            
-            // Build an event send to the Datalayer, which needs to trigger the E-commerce transaction in the GTM backend
-            // Additional datalayer items are send to the datalayer and processed by the GTM as an transaction
-            dataLayer.push({
-                        'event': 'trackTrans',
-                        'transactionId': '000111',
-                        'transactionAffiliation': 'Webshop',        
-												'transactionTotal': '12.90',
-                        'transactionTax':'10.00',
-                        'transactionShipping': '3.95',
-                        'transactionPaymentType': 'iDEAL',
-                        'transactionCurrency': 'EUR',
-                        'transactionPromoCode': 'Coupon_summer_deal',
-                        'transactionProducts': gtm_products                                        
-                        });        
+    	
+    	/** Build an event send to the Datalayer, which needs to trigger the E-commerce transaction in the GTM backend
+    	* Additional datalayer items are send to the datalayer and processed by the GTM as an transaction
+			*/
+    	dataLayer.push({
+			'event': 'trackTrans',
+			'transactionId': '000111',			// Transaction ID - Required
+			'transactionAffiliation': '',			// Affiliate / Shop name - Optional
+			'transactionTotal': 110.00,			// Total order value including VAT - As decimal seperator a . (dot) should be used - Required		
+			'transactionTax': 10.00,			// VAT value - As decimal seperator a . (dot) should be used - Required
+
+			'transactionShipping': 3.95,			// Shipping cost - As decimal seperator a . (dot) should be used - Required
+			'transactionPaymentType': 'iDEAL',		// Choice of payment type - iDEAL / Creditcard
+			'transactionCurrency': 'EUR',			// Currency code - use the proper supported currency code
+			'transactionPromoCode': '',			// Promotional code
+			'transactionProducts': gtm_products					
+			});	
   </script>
 <!-- End Google Tag Manager E-commerce -->
 
@@ -94,6 +96,8 @@ otherwise **replace both instances of GTM-XXXXXX within this part of the code** 
 ### Implementing the proper values
 Within the Google Tag Manager E-Commerce code you will find different Data Layer values which need to be populated with relevant transactional data. Although not all fields are required, it's important to get in touch with your OrangeValley point of contact if you can not populate some part with proper data. All values should be populated based on the [transaction data values](https://github.com/orangevalley/GTM_e-commerce/wiki/Google-Tag-Manager-E-Commerce-code-Transaction-Values) or the client specific list if so provided by OrangeValley.
 
+For supported currency codes please refer to the Google Analytics reference for [supported curreny codes](https://developers.google.com/analytics/devguides/platform/currencies).
+
 _**Note:** The Google Tag Manager E-Commerce code must be placed directly in the page that you intend on tracking values. Placing it in a hidden iframe or deploying it within another tag management system will prevent certain tags from accurately tracking the parent page._
 
 ## Verify your implementation
@@ -112,6 +116,10 @@ If you run in to any problems; for instance the Tag Assistant is reporting issue
 [Google Tag Manager support website](https://developers.google.com/tag-manager/quickstart)
 
 # Version History
+- 1.2.1 (April 30 - 2014): Updated the transaction price/tax/shipping values to numbers instead of strings. Second to that changed the comments to English and added reference to the supported currency codes.
+
+- 1.2 (Januari 17 - 2014): Updated the transaction price/tax/shipping values to numbers instead of strings
+
 - 1.1 (November 22 - 2013): Check if Data Layer exists and only build a (new) Data Layer if necessary
 
 - 1 (October 1 - 2012): Initial release of standardised Google Tag Manager E-Commerce code
