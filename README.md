@@ -1,6 +1,6 @@
 Google Tag Manager E-Commerce code
 ============
-Implementation guide for proper Google Tag Manager E-Commerce code. In advance of implementing the Google Tag Manager E-Commerce code you should check if 1. the [Google Tag Manager container code](https://github.com/orangevalley/GTM_standard) is working properly 2. you have received an instruction document from you Orangevalley point of contact regarding the preferred parameter values. When referred to Google Tag Manager E-Commerce code you should use the script within [GTM_eCommerceScript.js](https://github.com/orangevalley/GTM_e-commerce/blob/master/GTM_eCommerceScript.js).
+Implementation guide for proper Google Tag Manager E-Commerce code. In advance of implementing the Google Tag Manager E-Commerce code you should check if 1. the [Google Tag Manager container code](https://github.com/orangevalley/GTM_standard) is working properly and 2. you have received an instruction document from you Orangevalley point of contact regarding the preferred parameter values. When referred to Google Tag Manager E-Commerce code you should use the script within [GTM_eCommerceScript.js](https://github.com/orangevalley/GTM_e-commerce/blob/master/GTM_eCommerceScript.js).
 
 ## Background
 Google Tag Manager is a free tool that eliminates tedious code-editing tasks for your website. For tracking E-Commerce transactions the Google Tag Manager needs to be able to use the proper transactional data. This is done by using the Data Layer. 
@@ -73,10 +73,10 @@ _See the wiki for [transaction data values](https://github.com/orangevalley/GTM_
 - The E-Commerce code uses only standardised Data Layer which ensures full supported by Google Tag Manager.
 - Quick	and	easy – one script which supports all types of implementations (single product, multi-product and so on).
 - Google Tag Manager will configured to pickup on the E-Commerce code everywhere it's fired (independent from URI or even if necessary domain).
-- Google Tag Manager ensures flexible use of all product / transaction related Data Layer values, values from this transaction code van be used by many different marketing tags.
+- Google Tag Manager ensures flexible use of all product / transaction related Data Layer values, values from this transaction code can be used by many different marketing tags.
 
 ## Implementation
-he Google Tag Manager E-Commerce code is a combination of JavaScript and non-JavaScript code that you paste into your Thank You-page right after a successful transaction. It enables Tag Manager to uses transactional data provided to Google Tag Manager through the Data Layer.
+The Google Tag Manager E-Commerce code is a combination of JavaScript and non-JavaScript code that you paste into your Thank You-page right after a successful transaction. It enables Tag Manager to uses transactional data provided to Google Tag Manager through the Data Layer.
 
 To implement Google Tag Manager E-Commerce code, copy the code snippet provided within [GTM_eCommerceScript.js](https://github.com/orangevalley/GTM_e-commerce/blob/master/GTM_eCommerceScript.js). If you already have the Google Tag Manager Container code on the Thank You-page you could leave the:
 
@@ -91,12 +91,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-XXXX');</script>
 <!-- End Google Tag Manager -->
 ```
-otherwise **replace both instances of GTM-XXXXXX within this part of the code** with your container ID (supplied separately by OrangeValley). Paste the code into your website Thank You-page. The script is designed to work everywhere between the opening < body > and closing </ body > tags. Feel free to place it above or below the Google Tag Manager Container, both will work.
+Otherwise **replace both instances of GTM-XXXXXX within this part of the code** with your container ID (supplied separately by OrangeValley). Paste the code into your website Thank You-page. The script is designed to work everywhere between the opening `<body>` and closing `</body >` tags. Feel free to place it above or below the Google Tag Manager Container, both will work.
 
 ### Implementing the proper values
 Within the Google Tag Manager E-Commerce code you will find different Data Layer values which need to be populated with relevant transactional data. Although not all fields are required, it's important to get in touch with your OrangeValley point of contact if you can not populate some part with proper data. All values should be populated based on the [transaction data values](https://github.com/orangevalley/GTM_e-commerce/wiki/Google-Tag-Manager-E-Commerce-code-Transaction-Values) or the client specific list if so provided by OrangeValley.
 
-For supported currency codes please refer to the Google Analytics reference for [supported curreny codes](https://developers.google.com/analytics/devguides/platform/currencies).
+For supported currency codes please refer to the Google Analytics reference for [supported currency codes](https://developers.google.com/analytics/devguides/platform/currencies).
 
 _**Note:** The Google Tag Manager E-Commerce code must be placed directly in the page that you intend on tracking values. Placing it in a hidden iframe or deploying it within another tag management system will prevent certain tags from accurately tracking the parent page._
 
